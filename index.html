@@ -4,10 +4,21 @@
     <meta charset="utf-8">
     <title>Todo App</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="js/app.js"></script>
   <script src="js/todoController.js"></script>
+  <link rel="stylesheet" href="style.css">
   </head>
   <body>
-
+    <div ng-controller='TodoController as vm'>
+      <form ng-submit='vm.add()'>
+        <label for="vm.todo.thing">todo</label>
+        <input type="text" ng-model='vm.todo.thing'>
+        <input class="btn btn-default" type='submit'>
+      </form>
+      <ul>
+        <li ng-repeat='todo in vm.all'><input type="checkbox" ng-model='todo.done'><span ng-class='{strike:todo.done}'>{{todo.thing}}</span></li>
+      </ul>
+    </div>
   </body>
 </html>
