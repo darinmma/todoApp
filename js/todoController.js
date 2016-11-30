@@ -3,13 +3,13 @@
     angular.module('todoApp')
     .controller('TodoController', TodoController);
 
-    function TodoController(){
-      var vm = this
-      vm.todo = {thing: '', done: false}
-      vm.add = addTodo
+    function TodoController($scope){
+      // var vm = this
+      $scope.todo = {thing: '', done: false}
+      $scope.add = addTodo
 
 
-      vm.all = [
+      $scope.all = [
         {thing: 'get a mint from frontlines', done: false},
         {thing: 'eat mint', done: false},
         {thing: 'code', done: false},
@@ -18,8 +18,8 @@
       ];
 
       function addTodo() {
-        vm.all.push(vm.todo);
-        vm.todo = {thing: '', done: false};
+        $scope.all.push($scope.todo);
+        $scope.todo = {thing: '', done: false};
       }
     };
 }());

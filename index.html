@@ -10,14 +10,14 @@
   <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div ng-controller='TodoController as vm'>
-      <form ng-submit='vm.add()'>
-        <label for="vm.todo.thing">todo</label>
-        <input type="text" ng-model='vm.todo.thing'>
+    <div ng-controller='TodoController'>
+      <form ng-submit='add()'>
+        <label for="todo.thing">todo</label>
+        <input type="text" ng-model='todo.thing'>
         <input class="btn btn-default" type='submit'>
       </form>
       <ul>
-        <li ng-repeat='todo in vm.all'><input type="checkbox" ng-model='todo.done'><span ng-class='{strike:todo.done}'>{{todo.thing}}</span></li>
+        <li ng-repeat='todo in all'><input type="checkbox" ng-model='todo.done'><span ng-class='{strike:todo.done}'>{{todo.thing}}</span></li>
       </ul>
     </div>
   </body>
